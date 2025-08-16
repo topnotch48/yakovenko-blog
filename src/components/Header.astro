@@ -2,12 +2,9 @@
 import Hr from "./Hr.astro";
 import IconX from "@/assets/icons/IconX.svg";
 import IconMoon from "@/assets/icons/IconMoon.svg";
-import IconSearch from "@/assets/icons/IconSearch.svg";
-import IconArchive from "@/assets/icons/IconArchive.svg";
 import IconSunHigh from "@/assets/icons/IconSunHigh.svg";
 import IconMenuDeep from "@/assets/icons/IconMenuDeep.svg";
-import LinkButton from "./LinkButton.astro";
-import { SITE } from "@/config";
+import { SITE, LOGO_IMAGE } from "@/config";
 
 const { pathname } = Astro.url;
 
@@ -27,8 +24,7 @@ const isActive = (path: string) => {
   <a
     id="skip-to-content"
     href="#main-content"
-    class="absolute start-16 -top-full z-50 bg-background px-3 py-2 text-accent backdrop-blur-lg transition-all focus:top-4"
-  >
+    class="absolute start-16 -top-full z-50 bg-background px-3 py-2 text-accent backdrop-blur-lg transition-all focus:top-4">
     Skip to content
   </a>
   <div
@@ -41,9 +37,21 @@ const isActive = (path: string) => {
     >
       <a
         href="/"
-        class="absolute py-1 text-xl leading-8 font-semibold whitespace-nowrap sm:static sm:my-auto sm:text-2xl sm:leading-none"
+        class="logo whitespace-nowrap" style={{ display: "flex", alignItems: "center" }}
       >
-        {SITE.title}
+       {LOGO_IMAGE.enable && (
+            <img
+              src={`/assets/kube-1.svg`}
+              alt={SITE.title}
+              width={LOGO_IMAGE.width}
+              height={LOGO_IMAGE.height}
+              style={{ 
+                marginRight: "14px",
+                background: "transparent"
+              }}
+            />
+        )}
+        <span>Problem Solver</span>
       </a>
       <nav
         id="nav-menu"
@@ -68,7 +76,7 @@ const isActive = (path: string) => {
             "sm:mt-0 sm:flex sm:w-auto sm:gap-x-5 sm:gap-y-0",
           ]}
         >
-          <li class="col-span-2">
+          <!-- <li class="col-span-2">
             <a href="/posts" class:list={{ "active-nav": isActive("/posts") }}>
               Posts
             </a>
@@ -77,13 +85,13 @@ const isActive = (path: string) => {
             <a href="/tags" class:list={{ "active-nav": isActive("/tags") }}>
               Tags
             </a>
-          </li>
+          </li> -->
           <li class="col-span-2">
             <a href="/about" class:list={{ "active-nav": isActive("/about") }}>
               About
             </a>
           </li>
-          {
+          <!-- {
             SITE.showArchives && (
               <li class="col-span-2">
                 <LinkButton
@@ -102,8 +110,8 @@ const isActive = (path: string) => {
                 </LinkButton>
               </li>
             )
-          }
-          <li class="col-span-1 flex items-center justify-center">
+          } -->
+          <!-- <li class="col-span-1 flex items-center justify-center">
             <LinkButton
               href="/search"
               class:list={[
@@ -116,7 +124,7 @@ const isActive = (path: string) => {
               <IconSearch />
               <span class="sr-only">Search</span>
             </LinkButton>
-          </li>
+          </li> -->
           {
             SITE.lightAndDarkMode && (
               <li class="col-span-1 flex items-center justify-center">
