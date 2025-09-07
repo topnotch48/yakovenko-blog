@@ -27,10 +27,10 @@ export const GET: APIRoute = async ({ props }) => {
     });
   }
 
-  return new Response(
-    await generateOgImageForPost(props as CollectionEntry<"blog">),
-    {
+   const buffer = await generateOgImageForPost(props as CollectionEntry<"blog">)
+    // Convert Node.js Buffer to Uint8Array for the Response constructor
+    const uint8Array = new Uint8Array(buffer);
+    return new Response(uint8Array, {
       headers: { "Content-Type": "image/png" },
-    }
-  );
+    });
 };

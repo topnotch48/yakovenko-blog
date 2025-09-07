@@ -3,12 +3,19 @@ export const SITE = {
   author: "Nick Iakovenko",
   desc: "Personal website of Nick Iakovenko, principal software engineer and tech enthusiast.",
   title: "Nick Iakovenko's Blog",
+  profile: "",
   ogImage: "astropaper-og.jpg",
+  dynamicOgImage: false, // set to false if you don't want to generate og image on the fly
   lightAndDarkMode: false,
   showArchives: false,
   showBackButton: false, // show back button in post detail
   postPerPage: 8,
   postPerIndex: 8,
+  lang: "en",
+  timezone: "Europe/Zurich", // see the full list at https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  editPost: { enabled: false, text: "", url: "" },
+  dir: "ltr",
+  scheduledPostMargin: 10, // in minutes
 }
 
 export const LOCALE = {
