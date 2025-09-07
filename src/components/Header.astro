@@ -4,20 +4,21 @@ import IconX from "@/assets/icons/IconX.svg";
 import IconMoon from "@/assets/icons/IconMoon.svg";
 import IconSunHigh from "@/assets/icons/IconSunHigh.svg";
 import IconMenuDeep from "@/assets/icons/IconMenuDeep.svg";
+
 import { SITE, LOGO_IMAGE } from "@/config";
 
-const { pathname } = Astro.url;
+// const { pathname } = Astro.url;
 
 // Remove trailing slash from current pathname if exists
-const currentPath =
-  pathname.endsWith("/") && pathname !== "/" ? pathname.slice(0, -1) : pathname;
+// const currentPath =
+//   pathname.endsWith("/") && pathname !== "/" ? pathname.slice(0, -1) : pathname;
 
-const isActive = (path: string) => {
-  const currentPathArray = currentPath.split("/").filter(p => p.trim());
-  const pathArray = path.split("/").filter(p => p.trim());
+// const isActive = (path: string) => {
+//   const currentPathArray = currentPath.split("/").filter(p => p.trim());
+//   const pathArray = path.split("/").filter(p => p.trim());
 
-  return currentPath === path || currentPathArray[0] === pathArray[0];
-};
+//   return currentPath === path || currentPathArray[0] === pathArray[0];
+// };
 ---
 
 <header>
@@ -33,15 +34,15 @@ const isActive = (path: string) => {
   >
     <div
       id="top-nav-wrap"
-      class="relative flex w-full items-baseline justify-between bg-background p-4 sm:items-center sm:py-6"
+      class="relative flex w-full items-start justify-between p-4 sm:items-center sm:py-8"
     >
       <a
         href="/"
-        class="logo whitespace-nowrap" style={{ display: "flex", alignItems: "center" }}
+        class="absolute py-1 text-xl font-semibold sm:static sm:text-xl whitespace-nowrap" style={{ display: "flex", alignItems: "center" }}
       >
        {LOGO_IMAGE.enable && (
             <img
-              src={`/assets/kube-1.svg`}
+              src={`/assets/images/kube-1.svg`}
               alt={SITE.title}
               width={LOGO_IMAGE.width}
               height={LOGO_IMAGE.height}
@@ -86,11 +87,11 @@ const isActive = (path: string) => {
               Tags
             </a>
           </li> -->
-          <li class="col-span-2">
+          <!-- <li class="col-span-2">
             <a href="/about" class:list={{ "active-nav": isActive("/about") }}>
               About
             </a>
-          </li>
+          </li> -->
           <!-- {
             SITE.showArchives && (
               <li class="col-span-2">

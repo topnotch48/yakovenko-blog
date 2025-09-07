@@ -1,6 +1,5 @@
 import type { Props } from "astro";
 import IconMail from "@/assets/icons/IconMail.svg";
-import IconGitHub from "@/assets/icons/IconGitHub.svg";
 import IconLinkedin from "@/assets/icons/IconLinkedin.svg";
 import IconTelegram from "@/assets/icons/IconTelegram.svg";
 import IconGetMentor from "@/assets/icons/IconGetMentor.svg";
@@ -15,20 +14,14 @@ interface Social {
 
 export const SOCIALS: Social[] = [
   {
-    name: "Github",
-    href: "",
-    linkTitle: ` ${SITE.author} on Github`,
-    icon: IconGitHub,
-  },
-  {
     name: "LinkedIn",
-    href: "",
+    href: "https://www.linkedin.com/in/nikita-yakovenko/",
     linkTitle: `${SITE.author} on LinkedIn`,
     icon: IconLinkedin,
   },
   {
     name: "Telegram",
-    href: "",
+    href: "https://t.me/nyakovenko",
     linkTitle: `${SITE.author} on Telegram`,
     icon: IconTelegram,
   },
@@ -40,7 +33,7 @@ export const SOCIALS: Social[] = [
   },
   {
     name: "GetMentor",
-    href: "",
+    href: "https://getmentor.dev/mentor/nikita-iakovenko-3632",
     linkTitle: `${SITE.author} on GetMentor`,
     icon: IconGetMentor,
   },
